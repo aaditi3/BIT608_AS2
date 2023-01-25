@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Make a booking</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script 
+		src="https://code.jquery.com/jquery-3.6.3.js"
+		integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+		crossorigin="anonymous">
+  </script>
+  <script 
+		src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+		integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+		crossorigin="anonymous">
+  </script>
+  <script>
+  $( function() {
+    $(".datepicker").datepicker();
+  } );
+  </script>
+</head>
+<body>
+ 
+<h1>Make a booking</h1>
+<h2><a href='currentbookings.html'>[Return to the Bookings listing]</a><a href="index.php">[Return to the main page]</a></h2>
+<h2>Booking for Test</h2>
+
+
+ 
+<form method="POST">
+  <input type="hidden" name="id" value="">
+  <p>
+    <label for="roomID">Room (name,type,beds): </label>
+		<!-- <select id="roomID" name ="roomID">
+		<option value="example">Kellie, S, 5</option> -->
+		<input type="text" id= "roomID" name="roomID" minlength= "5" 
+           maxlength="50" required value="Kellie, S, 5">
+  </p>
+  <p>
+    <label for= "checkin_date">Checkin date:</label>
+    <input type= "text" class = "datepicker" id= "checkin_date" name="checkin_date" required value="">
+  </p>  
+  <p>  
+    <label for="checkout_date">Checkout date:</label>
+    <input type="text" class = "datepicker" id="checkout_date" name="checkout_date" required value="">
+   </p>
+  <p>
+    <label for="contact_number">Contact number:</label>
+    <input type="tel" id= "contact_number" name="contact_number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+  </p>
+  <p>
+    <label for="booking_extras">Booking extras:</label>
+    <textarea id="bookingextras" name="bookingextras" rows ="4" cols="50">
+	</textarea>
+  </p> 
+     <input type= "submit" name= "submit" value= "Add"><a href='makeabooking.html'>[Cancel]</a>
+ 
+</form>
+<br>
+<br>
+<br>
+<hr> 
+<h2>Search for room availability</h2>
+
+<form method="POST">
+	<p>
+    <label for= "checkin_date2">Checkin date:</label>
+ 
+
+    <input type= "text" class = "datepicker" id= "checkin_date2" name="checkin_date2" required value="">
+		   
+	<label for="checkout_date2">Checkout date:</label>
+ 
+
+    <input type="text" class = "datepicker" id="checkout_date2" name="checkout_date2" required value="">
+		   
+	<input type= "submit" name= "submit" value= "Search availability">
+  </p>  
+
+ </form>
+ <br>
+ <br>
+ <br>
+ <a href='privacy.html'>[Privacy]</a>
+
+</body>
+</html>
